@@ -1,4 +1,4 @@
-import { Schema, Model } from mongoose;
+import { Schema, model } from "mongoose";
 
 
 /**
@@ -99,7 +99,7 @@ const preparationPlanSchema = new Schema({
 })
 
 const interviewReportSchema = new Schema({
-    jobDesciption:{
+    jobDescription:{
         type: String,
         required: [true, "JD is required"]
     },
@@ -117,12 +117,16 @@ const interviewReportSchema = new Schema({
     technicalQuestion: [technicalQuestionSchema],
     behavioralQuestion: [behavioralQuestionSchema],
     skillGap: [skillGapSchema],
-    preparationPlan: [preparationPlanSchema]
+    preparationPlan: [preparationPlanSchema],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "users"
+    }
 
 }, {
     timestamps: true
 })
 
-const interviewReportModel = new Model("InterviewReport", interviewReportSchema);
+const interviewReportModel = model("InterviewReports", interviewReportSchema);
 
 export default interviewReportModel;

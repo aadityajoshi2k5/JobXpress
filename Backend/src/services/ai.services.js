@@ -1,6 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
+import "dotenv/config"
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_GENAI_API_KEY
@@ -13,7 +14,7 @@ const interviewReportSchema = {
             type: "number"
         },
 
-        technicalQuestions: {
+        technicalQuestion: {
             type: "array",
             items: {
                 type: "object",
@@ -32,7 +33,7 @@ const interviewReportSchema = {
             }
         },
 
-        behavioralQuestions: {
+        behavioralQuestion: {
             type: "array",
             items: {
                 type: "object",
@@ -51,7 +52,7 @@ const interviewReportSchema = {
             }
         },
 
-        skillGaps: {
+        skillGap:{
             type: "array",
             items: {
                 type: "object",
@@ -97,9 +98,9 @@ const interviewReportSchema = {
 
     required: [
         "matchScore",
-        "technicalQuestions",
-        "behavioralQuestions",
-        "skillGaps",
+        "technicalQuestion",
+        "behavioralQuestion",
+        "skillGap",
         "preparationPlan",
         "title"
     ]
