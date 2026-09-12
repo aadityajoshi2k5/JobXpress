@@ -119,7 +119,6 @@ export async function handleUserLogout(req, res) {
  * @access private
  */
 export async function handleUserGetMe(req, res) {
-    console.log("hey")
     const user = await userModel.findById(req.user.id);
     
     res.status(200).json({

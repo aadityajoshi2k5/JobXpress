@@ -1,10 +1,11 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const AuthContext = createContext(); 
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false) //production rehydraction true check?
+    const [loading, setLoading] = useState(true) //production rehydraction true check?
+    
     
 
     return (
