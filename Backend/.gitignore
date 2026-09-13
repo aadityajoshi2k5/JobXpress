@@ -1,6 +1,6 @@
 
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -8,14 +8,26 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies and generated output
+node_modules/
+dist/
+dist-ssr/
+coverage/
 *.local
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Puppeteer and tool caches
+.cache/
+.puppeteer/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+.vscode/settings.json
 .idea
 .DS_Store
 *.suo

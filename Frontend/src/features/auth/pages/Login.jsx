@@ -17,7 +17,7 @@ const Login = () => {
         navigate('/');
     }
     if (loading) {
-    return(<main>Loading...</main>)
+        return (<main><h1>Loading...</h1></main>)
 }
 
     return (
@@ -29,13 +29,13 @@ const Login = () => {
                     <label htmlFor="email">Email</label>
                         <input
                             onChange={(e)=> {setEmail(e.target.value)}}
-                            type="email" name="email" id="email" placeholder='input email' />
+                            type="email" name="email" id="email" placeholder='Enter your email' />
                 </div>
                 <div className="input-group">
-                    <label htmlFor="password">password</label>
+                    <label htmlFor="password">Password</label>
                         <input
                             onChange={(e) => { setPassword(e.target.value) }}
-                            type="password" name="password" id="password" placeholder='input pw' />
+                            type="password" name="password" id="password" placeholder='Enter your password' />
                 </div>
                 <button className='button primary-button'>Login</button>
                 </form>

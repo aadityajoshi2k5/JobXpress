@@ -21,6 +21,7 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.9.4",
     "nodemon": "^3.1.14",
+    "puppeteer": "^25.10.0",
     "zod": "^4.6.2",
     "zod-to-json-schema": "^3.25.2"
   }
